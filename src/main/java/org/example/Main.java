@@ -1,5 +1,9 @@
 package org.example;
 
+class BadThings extends Exception {
+
+}
+
 public class Main implements Comparable<Main> {
     public static void main(String[] args) {
         System.out.println("Hello world!");
