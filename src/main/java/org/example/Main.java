@@ -1,12 +1,19 @@
 package org.example;
 
-class BadThings extends Exception {
-
-}
-
 public class Main implements Comparable<Main> {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        int value = (int)(Math.random() * 3);
+        switch (value) {
+            default:
+                System.out.println("default");
+                break;
+            case 1:
+                System.out.println("1");
+                break;
+            case 2:
+                System.out.println("2");
+                break;
+        }
     }
 
     @Override
