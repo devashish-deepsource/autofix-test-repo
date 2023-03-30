@@ -14,6 +14,12 @@ public class Main implements Comparable<Main> {
                 System.out.println("2");
                 break;
         }
+
+        int ret = switch (value) {
+            default -> 0;
+            case 1 -> 1;
+            case 2 -> 2;
+        };
     }
 
     @Override
