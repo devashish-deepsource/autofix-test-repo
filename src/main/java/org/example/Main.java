@@ -20,6 +20,21 @@ public class Main implements Comparable<Main> {
             case 1 -> 1;
             case 2 -> 2;
         };
+
+        int moreRet = switch (value) {
+            default -> {
+                System.out.println("default");
+                yield 0;
+            }
+            case 1 -> {
+                System.out.println("1");
+                yield 1;
+            }
+            case 2 -> {
+                System.out.println("2");
+                yield 2;
+            }
+        };
     }
 
     @Override
