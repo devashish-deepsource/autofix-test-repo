@@ -50,8 +50,14 @@ public class Main implements Comparable<Main> {
         return 1;
     }
 
+    public void formatStrNewline() {
+        var str = String.format("this bad %d\n", 10);
+        System.out.println(str);
+    }
+
     @Override
     public boolean equals(Object obj) {
+        formatStrNewline();
         return super.equals(obj);
     }
 }
