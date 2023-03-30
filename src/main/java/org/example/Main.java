@@ -55,6 +55,13 @@ public class Main implements Comparable<Main> {
         System.out.println(str);
     }
 
+    static abstract class AbstractDefaultMethodNotInjectable {
+        @interface Inject {}
+
+        @Inject
+        public abstract int absMethod();
+    }
+
     @Override
     public boolean equals(Object obj) {
         formatStrNewline();
