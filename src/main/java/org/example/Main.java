@@ -1,6 +1,33 @@
 package org.example;
 
 public class Main implements Comparable<Main> {
+
+    @interface Inject {}
+    public static void newAutofixableIssues() {
+        int value = (int)(Math.random() * 10);
+        int ret = switch (value) {
+            default -> 0;
+            case 1 -> 1;
+            case 2 -> 2;
+        };
+
+        String message = String.format("The value is %d\n", value);
+        System.out.println(message);
+        System.out.println(ret);
+    }
+
+    abstract class Abs {
+        @Inject
+        public abstract int myAbstractMethod();
+
+        @Override
+        public boolean equals(Object o) {
+            double d1 = Math.random();
+            double d2 = Math.random();
+            return d1 == d2;
+        }
+    }
+
     public static void main(String[] args) {
         int value = (int)(Math.random() * 3);
         switch (value) {
@@ -53,10 +80,10 @@ public class Main implements Comparable<Main> {
     public void formatStrNewline() {
         var str = String.format("this bad %d\n", 10);
         System.out.println(str);
+        newAutofixableIssues();
     }
 
     static abstract class AbstractDefaultMethodNotInjectable {
-        @interface Inject {}
 
         @Inject
         public abstract int absMethod();
