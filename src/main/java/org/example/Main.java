@@ -1,5 +1,6 @@
 package org.example;
 
+// これはコメントです。
 public class Main implements Comparable<Main> {
 
     @interface Inject {}
@@ -79,7 +80,9 @@ public class Main implements Comparable<Main> {
 
     public void formatStrNewline() {
         var str = String.format("this bad %d\n", 10);
+        var string = String.format("%d\n", 20);
         System.out.println(str);
+        System.out.println(string);
         newAutofixableIssues();
     }
 
